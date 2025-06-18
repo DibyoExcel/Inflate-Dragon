@@ -915,7 +915,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "92";
+	app.meta.h["build"] = "95";
 	app.meta.h["company"] = "DubEnderDragon";
 	app.meta.h["file"] = "Inflation Dragon";
 	app.meta.h["name"] = "Inflation Dragon";
@@ -3502,7 +3502,7 @@ openfl_display_Sprite.prototype = $extend(openfl_display_DisplayObjectContainer.
 });
 var Main = function() {
 	openfl_display_Sprite.call(this);
-	this.addChild(new flixel_FlxGame(1280,720,PlayState,1,60,60,true));
+	this.addChild(new flixel_FlxGame(640,360,PlayState,1,60,60,true));
 	flixel_FlxG.autoPause = false;
 };
 $hxClasses["Main"] = Main;
@@ -4915,7 +4915,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this.add(this.belly);
 		this.pumpIndicator = new flixel_text_FlxText();
 		this.pumpIndicator.set_text("Pumps: 0\nPress Inflate Button or Space To Inflate\nPress Deflate Button or Backspace to Deflate");
-		this.pumpIndicator.set_size(25);
+		this.pumpIndicator.set_size(12);
 		this.add(this.pumpIndicator);
 		this.inflateB = new flixel_ui_FlxButton(100,flixel_FlxG.height * 0.85,"Inflate",function() {
 			_gthis.inflate();
@@ -70189,7 +70189,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 380206;
+	this.version = 766059;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
