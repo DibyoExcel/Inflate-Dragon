@@ -915,13 +915,13 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "103";
+	app.meta.h["build"] = "146";
 	app.meta.h["company"] = "DubEnderDragon";
 	app.meta.h["file"] = "Inflation Dragon";
 	app.meta.h["name"] = "Inflation Dragon";
 	app.meta.h["packageName"] = "com.example.myapp";
 	app.meta.h["version"] = "0.0.1";
-	var attributes = { allowHighDPI : true, alwaysOnTop : false, borderless : false, element : null, frameRate : 60, height : 1280, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, title : "Inflation Dragon", width : 1280, x : null, y : null};
+	var attributes = { allowHighDPI : true, alwaysOnTop : false, borderless : false, element : null, frameRate : 60, height : 720, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, title : "Inflation Dragon", width : 1280, x : null, y : null};
 	attributes.context = { antialiasing : 0, background : 0, colorDepth : 32, depth : true, hardware : true, stencil : true, type : null, vsync : false};
 	if(app.__window == null) {
 		if(config != null) {
@@ -3502,8 +3502,10 @@ openfl_display_Sprite.prototype = $extend(openfl_display_DisplayObjectContainer.
 });
 var Main = function() {
 	openfl_display_Sprite.call(this);
-	this.addChild(new flixel_FlxGame(640,640,PlayState,1,60,60,true));
+	this.addChild(new flixel_FlxGame(960,540,WarningState,1,60,60,true));
 	flixel_FlxG.autoPause = false;
+	var mouseImg = new flixel_FlxSprite().loadGraphic("assets/images/cursor.png");
+	flixel_FlxG.mouse.load(mouseImg.get_pixels(),0.75);
 };
 $hxClasses["Main"] = Main;
 Main.__name__ = "Main";
@@ -3718,7 +3720,7 @@ ManifestResources.init = function(config) {
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf);
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf);
 	var bundle;
-	var data = "{\"name\":null,\"assets\":\"aoy4:pathy34:assets%2Fdata%2Fdata-goes-here.txty4:sizezy4:typey4:TEXTy2:idR1y7:preloadtgoR0y20:assets%2Fdragon.jsonR2i58R3R4R5R7R6tgoR0y27:assets%2Fimages%2Fbelly.pngR2i7130R3y5:IMAGER5R8R6tgoR0y28:assets%2Fimages%2Fdragon.pngR2i12395R3R9R5R10R6tgoR0y32:assets%2Fimages%2Fdragon_ded.pngR2i7644R3R9R5R11R6tgoR0y36:assets%2Fimages%2Fimages-go-here.txtR2zR3R4R5R12R6tgoR0y36:assets%2Fmusic%2Fmusic-goes-here.txtR2zR3R4R5R13R6tgoR0y36:assets%2Fsounds%2Fsounds-go-here.txtR2zR3R4R5R14R6tgoR2i2114R3y5:MUSICR5y26:flixel%2Fsounds%2Fbeep.mp3y9:pathGroupaR16y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR2i39706R3R15R5y28:flixel%2Fsounds%2Fflixel.mp3R17aR19y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR2i5794R3y5:SOUNDR5R18R17aR16R18hgoR2i33629R3R21R5R20R17aR19R20hgoR2i15744R3y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR5y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR2i29724R3R22R23y36:__ASSET__flixel_fonts_monsterrat_ttfR5y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR0y33:flixel%2Fimages%2Fui%2Fbutton.pngR2i519R3R9R5R28R6tgoR0y36:flixel%2Fimages%2Flogo%2Fdefault.pngR2i3280R3R9R5R29R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	var data = "{\"name\":null,\"assets\":\"aoy4:pathy34:assets%2Fdata%2Fdata-goes-here.txty4:sizezy4:typey4:TEXTy2:idR1y7:preloadtgoR0y20:assets%2Fdragon.jsonR2i58R3R4R5R7R6tgoR0y27:assets%2Fimages%2Fbelly.pngR2i7130R3y5:IMAGER5R8R6tgoR0y28:assets%2Fimages%2Fcursor.pngR2i1092R3R9R5R10R6tgoR0y28:assets%2Fimages%2Fdragon.pngR2i12395R3R9R5R11R6tgoR0y32:assets%2Fimages%2Fdragon_ded.pngR2i7644R3R9R5R12R6tgoR0y36:assets%2Fimages%2Fimages-go-here.txtR2zR3R4R5R13R6tgoR0y36:assets%2Fmusic%2Fmusic-goes-here.txtR2zR3R4R5R14R6tgoR2i4173R3y5:MUSICR5y29:assets%2Fsounds%2Fexplode.mp3y9:pathGroupaR16hR6tgoR2i12594R3R15R5y27:assets%2Fsounds%2Fpump1.mp3R17aR18hR6tgoR2i12594R3R15R5y27:assets%2Fsounds%2Fpump2.mp3R17aR19hR6tgoR2i12594R3R15R5y27:assets%2Fsounds%2Fpump3.mp3R17aR20hR6tgoR0y36:assets%2Fsounds%2Fsounds-go-here.txtR2zR3R4R5R21R6tgoR2i2114R3R15R5y26:flixel%2Fsounds%2Fbeep.mp3R17aR22y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR2i39706R3R15R5y28:flixel%2Fsounds%2Fflixel.mp3R17aR24y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR2i5794R3y5:SOUNDR5R23R17aR22R23hgoR2i33629R3R26R5R25R17aR24R25hgoR2i15744R3y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR5y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR2i29724R3R27R28y36:__ASSET__flixel_fonts_monsterrat_ttfR5y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR0y33:flixel%2Fimages%2Fui%2Fbutton.pngR2i519R3R9R5R33R6tgoR0y36:flixel%2Fimages%2Flogo%2Fdefault.pngR2i3280R3R9R5R34R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	var manifest = lime_utils_AssetManifest.parse(data,ManifestResources.rootPath);
 	var library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -4822,6 +4824,7 @@ flixel_FlxState.prototype = $extend(flixel_group_FlxTypedGroup.prototype,{
 	,__properties__: $extend(flixel_group_FlxTypedGroup.prototype.__properties__,{get_subStateClosed:"get_subStateClosed",get_subStateOpened:"get_subStateOpened",set_bgColor:"set_bgColor",get_bgColor:"get_bgColor"})
 });
 var PlayState = function(MaxSize) {
+	this.blinkTime = 0;
 	this.scaleData = [1,1];
 	this.scaleFactor = 1;
 	this.bellySize = [1,1];
@@ -4844,6 +4847,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	,scaleFactor: null
 	,scaleData: null
 	,tweenDef: null
+	,blinkTime: null
 	,create: function() {
 		var _gthis = this;
 		var jsonLoa = "{\r\n    \"belly_size\": 50, \r\n    \"belly_offset\": [ 0, 0 ]\r\n}";
@@ -4917,19 +4921,23 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this.pumpIndicator.set_text("Pumps: 0\nPress Inflate Button or Space To Inflate\nPress Deflate Button or Backspace to Deflate");
 		this.pumpIndicator.set_size(12);
 		this.add(this.pumpIndicator);
-		this.inflateB = new flixel_ui_FlxButton(100,flixel_FlxG.height * 0.85,"Inflate",function() {
+		this.inflateB = new flixel_ui_FlxButton(0,flixel_FlxG.height * 0.85,"Inflate",function() {
 			_gthis.inflate();
 		});
+		this.inflateB.set_x(flixel_FlxG.width / 2 - this.inflateB.get_width() - 200);
 		this.add(this.inflateB);
-		this.deflateB = new flixel_ui_FlxButton(this.inflateB.get_width() * 2 + 50,flixel_FlxG.height * 0.85,"Deflate",function() {
+		this.deflateB = new flixel_ui_FlxButton(0,flixel_FlxG.height * 0.85,"Deflate",function() {
 			_gthis.deflate();
 		});
+		this.deflateB.set_x(flixel_FlxG.width / 2 + 200);
 		this.add(this.deflateB);
 		flixel_FlxState.prototype.create.call(this);
 	}
 	,inflate: function() {
 		if(this.belly != null) {
 			this.pumps += 1;
+			var soundFile = "assets/sounds/pump" + flixel_FlxG.random.int(1,3) + ".mp3";
+			flixel_FlxG.sound.play(soundFile);
 			this.bellySize[0] += this.pumps / 450 * this.scaleFactor;
 			this.scaleFactor *= 0.970;
 			this.bellySize[1] += this.pumps / 450 * this.scaleFactor;
@@ -4950,20 +4958,24 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		if(this.tweenDef != null) {
 			this.tweenDef.cancel();
 		}
-		this.tweenDef = flixel_tweens_FlxTween.tween(this,{ pumps : 0},0.5);
-		if(this.belly != null) {
-			this.bellySize[0] = this.scaleData[0];
-			this.scaleFactor = 1;
-			this.bellySize[1] = this.scaleData[1];
-			this.scaleFactor = 1;
-			if(this.teenX != null) {
-				this.teenX.cancel();
+		if(this.pumps > 0) {
+			this.tweenDef = flixel_tweens_FlxTween.tween(this,{ pumps : 0},0.5);
+			if(this.belly != null) {
+				this.bellySize[0] = this.scaleData[0];
+				this.scaleFactor = 1;
+				this.bellySize[1] = this.scaleData[1];
+				this.scaleFactor = 1;
+				if(this.teenX != null) {
+					this.teenX.cancel();
+				}
+				if(this.teenY != null) {
+					this.teenY.cancel();
+				}
+				this.teenX = flixel_tweens_FlxTween.tween(this.belly.scale,{ x : 0},0.5);
+				this.teenY = flixel_tweens_FlxTween.tween(this.belly.scale,{ y : 0},0.5);
 			}
-			if(this.teenY != null) {
-				this.teenY.cancel();
-			}
-			this.teenX = flixel_tweens_FlxTween.tween(this.belly.scale,{ x : 0},0.5);
-			this.teenY = flixel_tweens_FlxTween.tween(this.belly.scale,{ y : 0},0.5);
+		} else if(this.belly != null) {
+			this.pumps -= 1;
 		}
 	}
 	,update: function(elapsed) {
@@ -4984,13 +4996,68 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		if(this.pumps >= 100) {
 			this.explode();
 		}
+		if(this.pumps <= -10) {
+			this.forceDeflate();
+		}
+		if(this.pumps >= 75) {
+			this.blinkTime += elapsed;
+			if(this.blinkTime >= 2.5 / (this.pumps / 10)) {
+				this.pumpIndicator.set_color(-65536);
+				if(this.blinkTime >= 2.5 / (this.pumps / 20)) {
+					this.blinkTime = 0;
+					this.pumpIndicator.set_color(-1);
+				}
+			}
+		}
 	}
 	,explode: function() {
+		haxe_Log.trace("die of overinflate",{ fileName : "source/PlayState.hx", lineNumber : 187, className : "PlayState", methodName : "explode"});
+		flixel_FlxG.sound.play("assets/sounds/explode.mp3");
 		this.pumps = 0;
 		this.dragon.loadGraphic("assets/images/dragon_ded.png");
 		flixel_FlxG.camera.flash(-1);
 		var resetB = new flixel_ui_FlxButton(0,0,"Restart",function() {
-			var nextState = Type.createInstance(js_Boot.getClass(flixel_FlxG.game._state),[]);
+			var nextState = new WarningState();
+			if(flixel_FlxG.game._state.switchTo(nextState)) {
+				flixel_FlxG.game._requestedState = nextState;
+			}
+		});
+		var axes = flixel_util_FlxAxes.XY;
+		var tmp;
+		switch(axes._hx_index) {
+		case 0:case 2:
+			tmp = true;
+			break;
+		default:
+			tmp = false;
+		}
+		if(tmp) {
+			resetB.set_x((flixel_FlxG.width - resetB.get_width()) / 2);
+		}
+		var tmp;
+		switch(axes._hx_index) {
+		case 1:case 2:
+			tmp = true;
+			break;
+		default:
+			tmp = false;
+		}
+		if(tmp) {
+			resetB.set_y((flixel_FlxG.height - resetB.get_height()) / 2);
+		}
+		this.add(resetB);
+		this.remove(this.inflateB);
+		this.remove(this.deflateB);
+		this.remove(this.belly);
+		this.remove(this.pumpIndicator);
+	}
+	,forceDeflate: function() {
+		haxe_Log.trace("die of force deflate",{ fileName : "source/PlayState.hx", lineNumber : 206, className : "PlayState", methodName : "forceDeflate"});
+		this.pumps = 0;
+		this.dragon.loadGraphic("assets/images/dragon_ded.png");
+		flixel_FlxG.camera.flash(-65281);
+		var resetB = new flixel_ui_FlxButton(0,0,"Restart",function() {
+			var nextState = new WarningState();
 			if(flixel_FlxG.game._state.switchTo(nextState)) {
 				flixel_FlxG.game._requestedState = nextState;
 			}
@@ -5557,6 +5624,76 @@ UnicodeString.get_length = function(this1) {
 	}
 	return l;
 };
+var WarningState = function(MaxSize) {
+	flixel_FlxState.call(this,MaxSize);
+};
+$hxClasses["WarningState"] = WarningState;
+WarningState.__name__ = "WarningState";
+WarningState.__super__ = flixel_FlxState;
+WarningState.prototype = $extend(flixel_FlxState.prototype,{
+	create: function() {
+		flixel_FlxState.prototype.create.call(this);
+		var warnText = new flixel_text_FlxText(0,0,flixel_FlxG.width - 120,"Hold Up! this content is full of fetished. Are you sure want continue?");
+		warnText.setFormat(null,30,-1,"center");
+		this.add(warnText);
+		warnText.set_size(30);
+		var axes = flixel_util_FlxAxes.XY;
+		var tmp;
+		switch(axes._hx_index) {
+		case 0:case 2:
+			tmp = true;
+			break;
+		default:
+			tmp = false;
+		}
+		if(tmp) {
+			warnText.set_x((flixel_FlxG.width - warnText.get_width()) / 2);
+		}
+		var tmp;
+		switch(axes._hx_index) {
+		case 1:case 2:
+			tmp = true;
+			break;
+		default:
+			tmp = false;
+		}
+		if(tmp) {
+			warnText.set_y((flixel_FlxG.height - warnText.get_height()) / 2);
+		}
+		var continueButton = new flixel_ui_FlxButton(0,0,"Continue",function() {
+			var nextState = new PlayState();
+			if(flixel_FlxG.game._state.switchTo(nextState)) {
+				flixel_FlxG.game._requestedState = nextState;
+			}
+		});
+		this.add(continueButton);
+		var axes = flixel_util_FlxAxes.XY;
+		var tmp;
+		switch(axes._hx_index) {
+		case 0:case 2:
+			tmp = true;
+			break;
+		default:
+			tmp = false;
+		}
+		if(tmp) {
+			continueButton.set_x((flixel_FlxG.width - continueButton.get_width()) / 2);
+		}
+		var tmp;
+		switch(axes._hx_index) {
+		case 1:case 2:
+			tmp = true;
+			break;
+		default:
+			tmp = false;
+		}
+		if(tmp) {
+			continueButton.set_y((flixel_FlxG.height - continueButton.get_height()) / 2);
+		}
+		continueButton.set_y(continueButton.y + warnText.get_height());
+	}
+	,__class__: WarningState
+});
 var XmlType = {};
 XmlType.toString = function(this1) {
 	switch(this1) {
@@ -70189,7 +70326,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 799382;
+	this.version = 485842;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
