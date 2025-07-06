@@ -915,7 +915,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "146";
+	app.meta.h["build"] = "147";
 	app.meta.h["company"] = "DubEnderDragon";
 	app.meta.h["file"] = "Inflation Dragon";
 	app.meta.h["name"] = "Inflation Dragon";
@@ -3506,6 +3506,9 @@ var Main = function() {
 	flixel_FlxG.autoPause = false;
 	var mouseImg = new flixel_FlxSprite().loadGraphic("assets/images/cursor.png");
 	flixel_FlxG.mouse.load(mouseImg.get_pixels(),0.75);
+	if(flixel_FlxG.html5.onMobile) {
+		flixel_FlxG.mouse.set_visible(false);
+	}
 };
 $hxClasses["Main"] = Main;
 Main.__name__ = "Main";
@@ -70326,7 +70329,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 485842;
+	this.version = 111920;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
